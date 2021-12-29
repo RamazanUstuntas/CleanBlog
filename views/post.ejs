@@ -8,13 +8,17 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-8 col-sm-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1><%= post.title %></h1>
             <h2 class="subheading"><%= post.detail %></h2>
             <span class="meta">Posted by
               <a href="#">Start Bootstrap</a>
               on <%= post.dateCreated %> </span>
+          </div>
+          <div class="col-md-auto d-flex justify-content-end">
+            <a href="/edit/<%= post._id %>" class="btn btn-primary">Update</a>
+            <a href="/posts/<%= post._id %>?_method=DELETE" onclick="return confirm('ARE YOU SURE?')" class="btn btn-primary bg-danger">Delete</a>
           </div>
         </div>
       </div>
